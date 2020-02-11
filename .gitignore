@@ -56,6 +56,7 @@ package-lock.json
 # Babel can be configured! Many other tools have similar configs: ESLint (.eslintrc), Prettier (.prettierrc).
 .babelrc
 
+*.sqlite
 
 # Yarn Integrity file
 .yarn-integrity
