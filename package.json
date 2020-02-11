@@ -37,6 +37,7 @@
     "pg": "^7.18.1",
     "scss-compile": "^0.1.7",
     "sqlite3": "^4.0.6",
+    "url-parse": "^1.4.7",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
