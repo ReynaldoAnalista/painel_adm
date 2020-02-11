@@ -16,6 +16,9 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
 
+const DescricaoMaterial = use('App/Models/DescriptionMaterial');
+
+
 Route.group(() => {
   Route.get('/', 'HomeController.index').as('root');
 }).middleware('auth');
@@ -48,3 +51,19 @@ Route.group(() => {
   Route.get('/edit/:id', 'User/UserController.edit').as('userEdit');
   Route.post('/edit/:id', 'User/UserController.edit').as('userEdit').validator('User/Edit');
 }).prefix('user').middleware('auth');
+
+// Cadastro Controller
+
+Route.group(() => {
+  Route.get('/atividade', 'CadastroController.atividade').as('cadastroAtividadeManage');
+  
+  Route.get('/descricao_material/:id', async ({request, view}) => {    
+    const desc_material = 
+    await DescricaoMaterial.query().where('num_ng', request.params.id).fetch()
+    return desc_material;
+  }).formats(['json']);
+
+  Route.get('/export_to_excel', 'CadastroController.exportToExcel')
+  .as('cadastroExportToExcel');
+
+}).prefix('cadastro').middleware('auth');

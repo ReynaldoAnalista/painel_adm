@@ -2,11 +2,11 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-      <a href="{{ route('/') }}"><b>Admin</b>LTE</a>
+      <a href="{{ route('/') }}">Painel Administrativo</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg"></p>
 
       <form action="{{ route('auth.login') }}" id="login-form"  method="post">
           {{ csrfField() }}
@@ -19,22 +19,14 @@
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-          <div class="col-xs-8">
-            <div class="checkbox icheck">
-              <label>
-                <input type="checkbox" name="remember" value="1"> Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-block btn-success btn-flat">Sign In</button>
+            <button type="submit" class="btn btn-block btn-success btn-flat">Acessar</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
       <!-- /.social-auth-links -->
-      <a href="{{ route('forgot') }}">I forgot my password</a><br>
     </div>
     <!-- /.login-box-body -->
   </div>

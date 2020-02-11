@@ -27,7 +27,7 @@ class HomeController {
       }
     ];
     view.share({
-      title: 'Dashboard',
+      title: 'Seja bem vindo',
       breadcrumb: breadcrumb
     });
     return view.render('dashboard.index');

@@ -44,14 +44,14 @@ class AuthController {
     const user = await User.findBy('email', email)
     if (!user) {
       session.flash({
-        flash_error: 'There\'s no account for the provided e-mail.'
+        flash_error: 'Não existe conta para este e-mail.'
       })
       return response.redirect('back')
     }
 
     if (user.confirmation_token) {
       session.flash({
-        flash_error: 'Please verify your account first.'
+        flash_error: 'Verifique a sua conta primeiro.'
       })
       return response.redirect('back')
     }
@@ -60,7 +60,7 @@ class AuthController {
 
     if (!math_password) {
       session.flash({
-        flash_error: 'Password provided is incorrect. Please try again.'
+        flash_error: 'Senha incorreta. Tente novamente.'
       })
       return response.redirect('back')
     }
@@ -95,7 +95,7 @@ class AuthController {
       user.confirmation_token = null
       await user.save()
       session.flash({
-        flash_info: 'Account verified. You can now log in.'
+        flash_info: 'Conta verificada. Você pode se logar agora.'
       })
     }
 
@@ -116,14 +116,14 @@ class AuthController {
     const user = await User.findBy('email', data.email)
     if (!user) {
       session.flash({
-        flash_info: 'If the email you entered was right, in a minute you will receive the link to confirm your account.'
+        flash_info: 'Se o seu email estiver correto, você receberá a informação de login.'
       })
       return response.redirect('login')
     }
 
     if (!user.confirmation_token) {
       session.flash({
-        flash_info: 'Your account is already verified.'
+        flash_info: 'Sua conta já foi verificada.'
       })
       return response.route('root')
     }
@@ -131,7 +131,7 @@ class AuthController {
     Event.fire('RESEND_CONFIRMATION', user)
 
     session.flash({
-      flash_info: 'If the email you entered was right, in a minute you will receive the link to confirm your account.'
+      flash_info: 'Se o seu email estiver correto, em um minuto você estará logado.'
     })
     return response.route('login')
 

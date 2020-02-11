@@ -112,20 +112,20 @@ class UserController extends BaseController {
         Logger.error(ex.message);
 
       }
-      // await user.save();
-      // const rules = {
-      //   lastName: 'required',
-      //   phoneCode: 'required',
-      //   phoneNumber: 'required'
-      // };
-      // const validation = await validate(data, rules);
-      // if (validation.fails()) {
-      //   session
-      //     .withErrors(validation.messages())
-      //     .flashExcept(['password'])
+      await user.save();
+      const rules = {
+        lastName: 'required',
+        phoneCode: 'required',
+        phoneNumber: 'required'
+      };
+      const validation = await validate(data, rules);
+      if (validation.fails()) {
+        session
+          .withErrors(validation.messages())
+          .flashExcept(['password'])
 
-      //   return response.redirect('back')
-      // }
+        return response.redirect('back')
+      }
 
     }
     let phoneCode = await this.phoneCode();

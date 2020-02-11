@@ -22,13 +22,14 @@ class UserSeeder {
       {
         uid: uuid(),
         provider: 'local',
-        first_name: 'Admin',
-        last_name: 'admin',
-        email: 'adminlte@yopmail.com',
+        first_name: 'Reynaldo',
+        last_name: 'Souza',
+        email: 'reynaldo.souza.3c@enel.com',
+        phone_code: '55',
+        phone_number: '21982875666',
         role: 'admin',
         confirmation_token: '',
-        password: await Hash.make('123456')
-
+        password: await Hash.make('199129')
       }
     ])
 
