@@ -34,12 +34,12 @@
     "@adonisjs/validator": "^5.0.6",
     "es6-template-strings": "^2.0.1",
     "js2excel": "^1.0.1",
+    "nodemon": "^2.0.2",
     "pg": "^7.18.1",
     "scss-compile": "^0.1.7",
     "sqlite3": "^4.0.6",
     "url-parse": "^1.4.7",
     "uuid": "^3.3.2",
-    "nodemon": "^2.0.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },

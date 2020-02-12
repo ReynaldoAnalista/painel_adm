@@ -73,7 +73,7 @@ module.exports = {
   */
   pg: {
     client: 'pg',
-    connection: {
+    connection: { 
       host: Env.get('DB_HOST', DATABASE_URL.hostname),
       port: Env.get('DB_PORT', DATABASE_URL.port),
       user: Env.get('DB_USER', DATABASE_URL.username),
